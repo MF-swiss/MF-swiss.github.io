@@ -1,0 +1,315 @@
+/* ------------------------------------
+   Farbvariablen (Light & Dark Mode)
+------------------------------------ */
+:root {
+  --bg: #F7F7F7;
+  --text: #222;
+  --card: #FFFFFF;
+  --nav-bg: #FFFFFF;
+  --accent: #0A3D62;
+  --accent-light: #3C8DFF;
+  --shadow: rgba(0,0,0,0.06);
+}
+
+.dark {
+  --bg: #0E1117;
+  --text: #E6E6E6;
+  --card: #161B22;
+  --nav-bg: #161B22;
+  --accent: #3C8DFF;
+  --accent-light: #62A0FF;
+  --shadow: rgba(0,0,0,0.25);
+}
+
+/* ------------------------------------
+   Grundlayout & Typografie
+------------------------------------ */
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--accent);
+  transition: color 0.35s ease;
+}
+
+p, li {
+  font-size: 1.05rem;
+}
+
+/* ------------------------------------
+   Navigation
+------------------------------------ */
+nav {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.35s ease, border-color 0.35s ease;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 15px 20px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.25s ease;
+}
+
+nav a:hover {
+  background-color: var(--accent-light);
+  color: white;
+}
+
+
+/* Scrolling marquee */
+
+.marquee-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 0;
+  border-radius: 28px;
+
+  /* Edler, dominanter Premium-Verlauf */
+  background: linear-gradient(
+  135deg,
+  #0a0f14 0%,
+  #1c2a38 25%,
+  #3c3c3c 50%,
+  #1f1f1f 75%,
+  #0f141a 100%
+);
+
+  /* Außen-Fade für den „Spotlight“-Look */
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+
+}
+
+/* Fade links + rechts */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--surface), transparent);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--surface), transparent);
+}
+
+/* Text lesbar & edel */
+.marquee-item {
+  color: #e3edf7;
+  text-shadow: 0 0 8px rgba(140,180,220,0.25);
+
+}
+
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 32px;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.marquee-dot {
+  width: 6px;
+  height: 6px;
+  background: #e3edf7; /* gleiche Farbe wie der Text */
+  border-radius: 50%;
+  flex-shrink: 0;
+
+    /* Premium-Glow, abgestimmt auf den Text */
+  box-shadow: 
+    0 0 6px rgba(140,180,220,0.45),
+    0 0 12px rgba(140,180,220,0.25);
+}
+
+/* Loop-Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ------------------------------------
+   Dark Mode Button
+------------------------------------ */
+.theme-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 18px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.theme-btn:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------
+   Hero-Banner
+------------------------------------ */
+.hero {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  transition: background 0.35s ease;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* wichtig, damit der Text nicht zentriert bleibt */
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 220px;              /* kleiner, aber ausdrucksstark */
+    border-radius: 10px;       /* moderner Look */
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtiler Tiefeneffekt */
+}
+
+
+/* ------------------------------------
+   Page Wrapper
+------------------------------------ */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ------------------------------------
+   Container & Karten
+------------------------------------ */
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px var(--shadow);
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ------------------------------------
+   Grid-Layout für Projekte
+------------------------------------ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px var(--shadow);
+  transition: 0.25s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+/* ------------------------------------
+   Buttons
+------------------------------------ */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-light);
+}
+
+/* ------------------------------------
+   Footer
+------------------------------------ */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: color 0.35s ease;
+}

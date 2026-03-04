@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekte – Marco</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<!-- Marquee -->
+<div class="marquee-wrapper">
+  <div class="marquee-track">
+    <!-- doubled for seamless loop -->
+    <span class="marquee-item"><span class="marquee-dot"></span>Python</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>JavaScript</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Node.js</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>PostgreSQL</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>SQL</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Git & GitHub</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>REST APIs</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>MS Products</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Virtualisierung (VMware & VirtualBox)</span>
+    <!-- zweiter Durchlauf -->
+    <span class="marquee-item"><span class="marquee-dot"></span>Python</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>JavaScript</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Node.js</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>PostgreSQL</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>SQL</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Git & GitHub</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>REST APIs</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>MS Products</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Virtualisierung (VMware & VirtualBox)</span>
+  </div>
+</div>
+
+<button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+  
+<nav>
+  <ul>
+    <li><a href="index.html">Start</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projekte.html">Projekte</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+
+  <section>
+    <h1>Projekte</h1>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Projekt 1 - Portfolio</h3>
+        <p>Die Erstellung dieser Website dient sowohl als Portfolio im Bewerbungsprozess als auch als Lernprojekt zur Entwicklung und Gestaltung einer eigenen Webpräsenz. Grundlage hierfür bilden moderne Technologien wie HTML, CSS und JavaScript sowie die Integration von KI-Komponenten.
+        Der Impuls für dieses Vorhaben entstand durch die Entdeckung der GitHub-Homepage und der darin enthaltenen Lern-Repositories.
+        Das Ziel ist es, während des Entwicklungsprozesses neue Fähigkeiten zu erwerben und das erworbene Wissen und die Ergebnisse im Rahmen von Bewerbungen professionell zu präsentieren.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Projekt 2 – the.drone.shot Website</h3>
+        <p>
+          Dieses Projekt entstand als moderne Webpräsenz für meine Drohnen- und Fotografiearbeiten. 
+          Im Gegensatz zu reinen FPV-Projekten liegt der Fokus hier sowohl auf Foto- als auch auf 
+          klassischen Drohnenaufnahmen. Ziel war es, ein visuell ansprechendes, responsives und 
+          performantes Portfolio zu entwickeln, das reale Medieninhalte professionell präsentiert.
+          <br><br>
+          Die Seite wurde mit HTML, CSS und JavaScript umgesetzt und beinhaltet unter anderem ein 
+          dynamisches Masonry-Grid, Lazy Loading, animierte UI-Elemente sowie die Integration 
+          externer Inhalte wie Instagram-Feeds. Das Projekt diente dazu, moderne Frontend-Techniken 
+          praktisch anzuwenden und ein hochwertiges Nutzererlebnis zu gestalten.
+          <br><br>
+          Live ansehen: 
+          <a href="https://mf-swiss.github.io/the.drone.shot/" target="_blank">
+            https://mf-swiss.github.io/the.drone.shot/
+          </a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Projekt 3</h3>
+        <p>Optionales drittes Projekt.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Marco Fritsche – Persönliches Portfolio
+</footer>
+
+<script>
+  // Gespeichertes Theme beim Laden der Seite wiederherstellen
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+  }
+
+  // Toggle-Button-Funktion
+  const toggle = document.getElementById('theme-toggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    
+    // Status in localStorage speichern
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    // Button-Text aktualisieren
+    toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+  });
+  
+  // Button-Text initial anpassen
+  toggle.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+</script>
+</body>
+</html>

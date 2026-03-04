@@ -338,12 +338,14 @@ footer {
 }
 
 .about-hero-photo img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 260px; /* maximale Bildbreite */
+  height: auto;
   border-radius: 50%;
+  object-fit: cover;
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
+
 
 /* Responsive */
 @media (max-width: 900px) {

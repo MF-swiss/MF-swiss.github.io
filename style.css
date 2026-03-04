@@ -48,13 +48,24 @@ p, li {
    Navigation
 ------------------------------------ */
 nav {
-  background-color: var(--nav-bg);
-  border-bottom: 1px solid var(--shadow);
   position: sticky;
   top: 0;
   z-index: 100;
+
+  /* Glas-/Blur-Effekt */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* Transparenter Hintergrund für Glas-Look */
+  background: rgba(255, 255, 255, 0.08);
+
+  /* Dezente Linie unten */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  /* Sanfter Übergang */
   transition: background-color 0.35s ease, border-color 0.35s ease;
 }
+
 
 nav ul {
   list-style: none;
@@ -273,17 +284,23 @@ section {
 }
 
 .card {
-  background: var(--card);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px var(--shadow);
-  transition: 0.25s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+
+  padding: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px var(--shadow);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
+
 
 /* ------------------------------------
    Buttons

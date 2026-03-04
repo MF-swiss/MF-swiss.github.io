@@ -313,3 +313,48 @@ footer {
   font-size: 0.9rem;
   transition: color 0.35s ease;
 }
+
+/* Über-mich Hero Section */
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 3rem;
+  background: var(--bg);
+}
+
+.about-hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.about-hero-text p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 480px;
+}
+
+.about-hero-photo img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .about-hero-photo img {
+    width: 200px;
+    height: 200px;
+  }
+}

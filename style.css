@@ -380,37 +380,56 @@ footer {
   justify-content: space-between;
   padding: 4rem 2rem;
   gap: 3rem;
-  background: var(--bg);
+
+  /* Premium-Gradient, ruhiger als Startseite */
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--accent-light) 35%,
+    #6aa8ff 90%
+  );
+
+  border-radius: 16px;
+
+  /* Subtiler Glow */
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.15),
+    0 0 32px rgba(80, 140, 255, 0.25);
+
+  color: white;
+  transition: background 0.35s ease;
 }
 
 .about-hero-text h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: var(--text);
+  letter-spacing: -0.5px;
+  color: white;
 }
 
 .about-hero-text p {
-  font-size: 1.2rem;
-  color: var(--text-light);
+  font-size: 1.25rem;
+  opacity: 0.95;
   max-width: 480px;
+  color: white;
 }
 
 .about-hero-photo img {
-  width: 100%;
-  max-width: 260px;
-  height: auto;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
 
-  /* Edler, moderner Tech-Soft-Shadow */
+  /* Premium-Shadow */
   box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.12),
-    0 16px 40px rgba(0, 0, 0, 0.08);
+    0 8px 20px rgba(0, 0, 0, 0.18),
+    0 0 24px rgba(255, 255, 255, 0.08);
 
-  /* Optional: hauchdünne Outline für Darkmode-Perfektion */
-  outline: 1px solid rgba(255, 255, 255, 0.04);
+  /* Edle Outline */
+  outline: 1px solid rgba(255, 255, 255, 0.15);
 }
+
 
 /* ------------------------------------
    Skill-Badges

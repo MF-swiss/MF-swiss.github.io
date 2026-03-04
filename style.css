@@ -308,17 +308,39 @@ section {
 .btn {
   display: inline-block;
   padding: 12px 20px;
-  background-color: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
   color: white;
-  border-radius: 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
   transition: 0.25s ease;
 }
 
-.btn:hover {
-  background-color: var(--accent-light);
+.btn-outline:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
+
 
 /* ------------------------------------
    Footer

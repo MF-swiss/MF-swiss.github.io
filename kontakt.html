@@ -14,8 +14,6 @@
 <body>
 
 
-
-
 <!-- Marquee -->
 <div class="marquee-wrapper">
   <div class="marquee-track">
@@ -66,6 +64,18 @@
 
   </section>
 
+<main class="page">
+
+  <!-- Kontaktbereich mit Fade-In -->
+  <section class="fade-in">
+    <h1>Kontakt</h1>
+
+    <p>Wohnort: Region St. Gallen</p>
+    <p>Email: <a href="mailto:m_fritsche@outlook.com">m_fritsche@outlook.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/mfritsche/" target="_blank">linkedin.com/in/mfritsche</a></p>
+    <p>GitHub: <a href="https://github.com/MF-swiss" target="_blank">github.com/MF-swiss</a></p>
+  </section>
+
 </main>
 
 <footer>
@@ -73,27 +83,34 @@
 </footer>
 
 <script>
-  // Gespeichertes Theme beim Laden der Seite wiederherstellen
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     document.body.classList.add('dark');
   }
 
-  // Toggle-Button-Funktion
   const toggle = document.getElementById('theme-toggle');
   toggle.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     const isDark = document.body.classList.contains('dark');
-    
-    // Status in localStorage speichern
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    
-    // Button-Text aktualisieren
     toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
   });
-  
-  // Button-Text initial anpassen
+
   toggle.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
 </script>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>

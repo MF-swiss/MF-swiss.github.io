@@ -339,12 +339,21 @@ footer {
 
 .about-hero-photo img {
   width: 100%;
-  max-width: 260px; /* maximale Bildbreite */
+  max-width: 260px;
   height: auto;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+
+  /* Edler, moderner Tech-Soft-Shadow */
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    0 16px 40px rgba(0, 0, 0, 0.08);
+
+  /* Optional: hauchdünne Outline für Darkmode-Perfektion */
+  outline: 1px solid rgba(255, 255, 255, 0.04);
 }
+
+
 
 
 /* Responsive */
@@ -359,4 +368,16 @@ footer {
     width: 200px;
     height: 200px;
   }
+}
+
+/* Micro‑Animationen beim Scrollen */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

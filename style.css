@@ -211,44 +211,64 @@ nav a:hover {
    Hero-Banner
 ------------------------------------ */
 .hero {
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--accent-light) 40%,
+    #6aa8ff 100%
+  );
   color: white;
   padding: 80px 20px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 40px;
   transition: background 0.35s ease;
+
+  /* Premium-Glow */
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.15),
+    0 0 32px rgba(80, 140, 255, 0.25);
 }
 
 .hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
 }
 
 .hero p {
-  font-size: 1.3rem;
-  opacity: 0.9;
+  font-size: 1.25rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left; /* wichtig, damit der Text nicht zentriert bleibt */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .hero-text {
-    flex: 1;
+  flex: 1;
 }
 
 .hero-image img {
-    width: 220px;              /* kleiner, aber ausdrucksstark */
-    border-radius: 10px;       /* moderner Look */
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtiler Tiefeneffekt */
+  width: 240px;
+  border-radius: 14px;
+  object-fit: cover;
+
+  /* Premium-Shadow */
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18),
+    0 0 24px rgba(255, 255, 255, 0.08);
+
+  /* Edle Outline */
+  outline: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 

@@ -3,6 +3,7 @@
 ------------------------------------ */
 :root {
   --bg: #F7F7F7;
+  --surface: #F7F7F7;
   --text: #222;
   --card: #FFFFFF;
   --nav-bg: #FFFFFF;
@@ -13,6 +14,7 @@
 
 .dark {
   --bg: #0E1117;
+  --surface: #0E1117;
   --text: #E6E6E6;
   --card: #161B22;
   --nav-bg: #161B22;
@@ -32,6 +34,23 @@ body {
   color: var(--text);
   line-height: 1.6;
   transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  z-index: 999;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
 }
 
 h1, h2, h3 {
@@ -88,6 +107,13 @@ nav a {
 nav a:hover {
   background-color: var(--accent-light);
   color: white;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-light);
+  outline-offset: 3px;
+  border-radius: 8px;
 }
 
 
@@ -501,4 +527,17 @@ footer {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
 }

@@ -13,6 +13,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
   
 <!-- Marquee -->
 <div class="marquee-wrapper">
@@ -41,9 +43,9 @@
 </div>
 
 
-<button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+<button id="theme-toggle" class="theme-btn" aria-label="Darstellung zwischen Dark Mode und Light Mode umschalten" aria-pressed="false">🌙 Dark Mode</button>
 
-<nav>
+<nav aria-label="Hauptnavigation">
   <ul>
     <li><a href="../index.html">Start</a></li>
     <li><a href="../pages/ueber-mich.html">Über mich</a></li>
@@ -56,18 +58,16 @@
 
 
   
-<main class="page">
+<main id="main-content" class="page">
 
   <!-- Downloads-Bereich mit Fade-In -->
   <section class="fade-in">
     <h1>Downloads</h1>
     <h3><i>Aus Datenschutz- und Vertraulichkeitsgründen werden hier keine Dateien zum Download bereitgestellt.</i></h3>
-
-    <ul>
-      <li><a href="../documents/Lebenslauf_MarcoFritsche.pdf" download="Lebenslauf_Marco_Fritsche.pdf">Lebenslauf (PDF)</a></li>
-      <li><a href="../documents/Zeugnisse_und_Zertifikate_MarcoFritsche.pdf" download="Zeugnisse_Zertifikate_Marco_Fritsche.pdf">Zeugnisse & Zertifikate (PDF)</a></li>
-      <li><a href="../documents/WISS_Zwischenzeugnis_MarcoFritsche.pdf" download="Zwischenzeugnis_Marco_Fritsche.pdf">Zwischenzeugnis – Informatiker Applikationsentwicklung (PDF)</a></li>
-    </ul>
+    <p>
+      Bei berechtigtem Interesse sende ich Unterlagen (Lebenslauf, Zeugnisse, Zertifikate) gerne direkt auf Anfrage.
+      Bitte melde dich über die <a href="../pages/kontakt.html">Kontaktseite</a>.
+    </p>
   </section>
 
 </main>
@@ -88,9 +88,11 @@
     const isDark = document.body.classList.contains('dark');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
   });
 
   toggle.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  toggle.setAttribute('aria-pressed', document.body.classList.contains('dark') ? 'true' : 'false');
 </script>
 
 <script>

@@ -13,6 +13,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
 
 <!-- Marquee -->
 <div class="marquee-wrapper">
@@ -40,9 +42,9 @@
   </div>
 </div>
 
-<button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+<button id="theme-toggle" class="theme-btn" aria-label="Darstellung zwischen Dark Mode und Light Mode umschalten" aria-pressed="false">🌙 Dark Mode</button>
   
-<nav>
+<nav aria-label="Hauptnavigation">
   <ul>
     <li><a href="../index.html">Start</a></li>
     <li><a href="../pages/ueber-mich.html">Über mich</a></li>
@@ -53,7 +55,7 @@
   </ul>
 </nav>
 
-<main class="page">
+<main id="main-content" class="page">
 
   <!-- Kontaktbereich mit Fade-In -->
   <section class="fade-in">
@@ -61,8 +63,8 @@
 
     <p>Wohnort: Region St. Gallen</p>
     <p>Email: <a href="mailto:m_fritsche@outlook.com">m_fritsche@outlook.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/mfritsche/" target="_blank">linkedin.com/in/mfritsche</a></p>
-    <p>GitHub: <a href="https://github.com/MF-swiss" target="_blank">github.com/MF-swiss</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/mfritsche/" target="_blank" rel="noopener noreferrer">linkedin.com/in/mfritsche</a></p>
+    <p>GitHub: <a href="https://github.com/MF-swiss" target="_blank" rel="noopener noreferrer">github.com/MF-swiss</a></p>
   </section>
 
 </main>
@@ -83,9 +85,11 @@
     const isDark = document.body.classList.contains('dark');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
   });
 
   toggle.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  toggle.setAttribute('aria-pressed', document.body.classList.contains('dark') ? 'true' : 'false');
 </script>
 
 <script>

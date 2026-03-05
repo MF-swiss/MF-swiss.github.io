@@ -462,6 +462,22 @@ footer {
 
 
 /* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 200px;
+    height: auto;
+  }
+}
+
 @media (max-width: 900px) {
   .about-hero {
     flex-direction: column-reverse;

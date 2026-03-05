@@ -6,13 +6,14 @@
   <title>Portfolio – Marco Fritsche</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/portfolio.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/portfolio.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/portfolio.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/portfolio.png">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
+  
 <!-- Marquee -->
 <div class="marquee-wrapper">
   <div class="marquee-track">
@@ -39,46 +40,34 @@
   </div>
 </div>
 
-<button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
 
+<button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
 
 <nav>
   <ul>
-    <li><a href="index.html">Start</a></li>
-    <li><a href="ueber-mich.html">Über mich</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="projekte.html">Projekte</a></li>
-    <li><a href="downloads.html">Downloads</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="../index.html">Start</a></li>
+    <li><a href="../pages/ueber-mich.html">Über mich</a></li>
+    <li><a href="../pages/skills.html">Skills</a></li>
+    <li><a href="../pages/projekte.html">Projekte</a></li>
+    <li><a href="../pages/downloads.html">Downloads</a></li>
+    <li><a href="../pages/kontakt.html">Kontakt</a></li>
   </ul>
 </nav>
 
+
+  
 <main class="page">
 
-  <!-- Hero-Bereich mit Fade-In -->
-  <section class="about-hero fade-in">
-    <div class="about-hero-text fade-in">
-        <h1>Marco Fritsche</h1>
-        <p>Applikationsentwickler in Ausbildung mit klaren Strukturen, modernen Workflows und nachhaltigen technischen Lösungen.</p>
-    </div>
-  
-    <div class="about-hero-photo fade-in">
-      <img src="assets/images/Bewerbungsfoto_längs.jpg" alt="Portrait von Marco Fritsche">
-    </div>
-  </section>
-
-  <!-- Haupttext als ein Fade-In Block -->
+  <!-- Downloads-Bereich mit Fade-In -->
   <section class="fade-in">
-    <h1>Über mich</h1>
-    <p>
-      Ich bin Marco Fritsche, ein engagierter Informatiker mit einer Leidenschaft für klare Strukturen, effiziente Abläufe und nachhaltige Verbesserungen in technischen Systemen. Meine besondere Stärke liegt darin, komplexe Prozesse zu durchdringen, logisch aufzubereiten und so weiterzuentwickeln, dass sie langfristig stabil, nachvollziehbar und wartungsfreundlich bleiben.
-    </p>
-    <p>
-      Ich arbeite gerne dort, wo viele Schritte ineinandergreifen und wo präzise Abstimmung entscheidend ist. Ob es um die Optimierung bestehender Abläufe, die Einführung verlässlicher Entwicklungs‑ und Deployment‑Prozesse oder die Vereinfachung technischer Workflows geht, dabei denke ich in Systemen, Abhängigkeiten und Architekturmustern.
-    </p>
-    <p>
-      Was mich antreibt, ist die Kombination aus analytischem Denken und praktischem Nutzen. Ich möchte Lösungen schaffen, die Teams entlasten, Fehlerquellen reduzieren und den Alltag spürbar effizienter machen. Dabei lege ich grossen Wert auf Transparenz, saubere Strukturen und eine Arbeitsweise, die auch in Zukunft problemlos erweitert werden kann.
-    </p>
+    <h1>Downloads</h1>
+    <h3><i>Aus Datenschutz- und Vertraulichkeitsgründen werden hier keine Dateien zum Download bereitgestellt.</i></h3>
+
+    <ul>
+      <li><a href="../documents/Lebenslauf_MarcoFritsche.pdf" download="Lebenslauf_Marco_Fritsche.pdf">Lebenslauf (PDF)</a></li>
+      <li><a href="../documents/Zeugnisse_und_Zertifikate_MarcoFritsche.pdf" download="Zeugnisse_Zertifikate_Marco_Fritsche.pdf">Zeugnisse & Zertifikate (PDF)</a></li>
+      <li><a href="../documents/WISS_Zwischenzeugnis_MarcoFritsche.pdf" download="Zwischenzeugnis_Marco_Fritsche.pdf">Zwischenzeugnis – Informatiker Applikationsentwicklung (PDF)</a></li>
+    </ul>
   </section>
 
 </main>
@@ -87,7 +76,6 @@
   © 2026 Marco Fritsche – Persönliches Portfolio
 </footer>
 
-<!-- Theme Script -->
 <script>
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
@@ -105,7 +93,6 @@
   toggle.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
 </script>
 
-<!-- Fade-In Script -->
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
